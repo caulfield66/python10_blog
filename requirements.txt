@@ -4,3 +4,5 @@ Pillow==8.1
 djangorestframework
 python-decouple
 django-ckeditor
+pytils
+django-filter
