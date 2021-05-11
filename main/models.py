@@ -59,3 +59,11 @@ class Comment(models.Model):
         constraints = [
             CheckConstraint(check=models.Q(rating__gte=1) & models.Q(rating__lte=5), name='rating_range')
         ]
+
+
+class Like(models.Model):
+    post = models.ForeignKey(Post, on_delete=models.CASCADE, related_name='likes')
+    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='likes')
+    is_liked = models.BooleanField(default=False)
+
+
